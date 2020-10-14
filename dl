@@ -1,0 +1,13 @@
+  %%[
+set @balance = "1-3000.0"
+if indexOf(@balance,"-") > 0 then
+    /* negative number */
+    set @word = concat("Your account is currently $",Substring(@balance,Add(indexOf(@balance, "-"),1))," in credit.")
+else
+    /* postivie number */
+    set @word = concat("Your account balance is currently $",@balance,".")
+endif
+]%%
+<br>index is -->  %%=indexOf(@balance,"-")=%%
+<br>the wording is -- > 
+%%=v(@word)=%%
